@@ -134,8 +134,3 @@ resource "aws_iam_role_policy_attachment" "karpenter_node_ecr_attach" {
   role       = aws_iam_role.karpenter_node.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
-
-# Spot instance 생성을 위한 리소스
-resource "aws_iam_service_linked_role" "ec2_spot" {
-  aws_service_name = "spot.amazonaws.com"
-}
